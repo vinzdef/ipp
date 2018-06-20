@@ -4,19 +4,19 @@
 
 #### Go Server:
 
-- Has internal counter
-- Serve static files
-- Offer POST endpoint to increase counter
-- Offer WebSocket to read counter value
+- Has an internal counter
+- Serves static files
+- Has `POST` endpoint to increase counter
+- Has WebSocket to broadcast counter value
 
 #### Frontend:
 
 - React + Redux
 - ES6 + JSX
-- Reads value over websocket
-- Has increase button that sends POST
+- Reads value over WebSocket
+- Has increase button that sends `POST`
 - Looks nice, maybe with some CSS Framework
-- Built with webpack
+- Built with Webpack
 
 ___
 

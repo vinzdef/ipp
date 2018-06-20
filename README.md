@@ -18,12 +18,15 @@
 - Looks nice, maybe with some CSS Framework
 - Built with webpack
 
+___
+
 ### Phases
 
 #### 0
-- [x] Set up some boilerplate
 - [x] Read trough Go tutorial [https://tour.golang.org/welcome/1](https://tour.golang.org/welcome/1)
+- [x] Set up frontend boilerplate
 - [x] Set up a simple static server
+- [x] Have a minimal working environment
 
 #### 1
 - [ ] WebSocket Endpoint

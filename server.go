@@ -13,5 +13,5 @@ func main() {
 	http.Handle("/", fs)
 
 	log.Println("[+] Server Listening on :", PORT)
-	http.ListenAndServe(fmt.Sprintf(":%d", PORT), nil)
+	http.ListenAndServe(fmt.Sprintf("0.0.0.0:%d", PORT), nil)
 }

@@ -26,13 +26,13 @@
 - [x] Set up a simple static server
 
 #### 1
-- [] WebSocket Endpoint
-- [] WebSocket Connection
-- [] POST Endpoint
-- [] POST Action
-- [] UI
+- [ ] WebSocket Endpoint
+- [ ] WebSocket Connection
+- [ ] POST Endpoint
+- [ ] POST Action
+- [ ] UI
 
 #### 2
-- [] Polish UI
-- [] Make sure code is portable
-- [] Release as zip including built frontend
+- [ ] Polish UI
+- [ ] Make sure code is portable
+- [ ] Release as zip including built frontend

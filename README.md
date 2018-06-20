@@ -24,3 +24,15 @@
 - [x] Set up some boilerplate
 - [x] Read trough Go tutorial [https://tour.golang.org/welcome/1](https://tour.golang.org/welcome/1)
 - [x] Set up a simple static server
+
+#### 1
+- [] WebSocket Endpoint
+- [] WebSocket Connection
+- [] POST Endpoint
+- [] POST Action
+- [] UI
+
+#### 2
+- [] Polish UI
+- [] Make sure code is portable
+- [] Release as zip including built frontend

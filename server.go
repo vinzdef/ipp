@@ -2,16 +2,15 @@ package main
 
 import (
 	"log"
-    "fmt"
 	"net/http"
 )
 
-const PORT = 3000
+const HOST_PORT = "0.0.0.0:3000"
 
 func main() {
 	fs := http.FileServer(http.Dir("static"))
 	http.Handle("/", fs)
 
-	log.Println("[+] Server Listening on :", PORT)
-	http.ListenAndServe(fmt.Sprintf("0.0.0.0:%d", PORT), nil)
+	log.Println("[+] Server Listening on ", HOST_PORT)
+	http.ListenAndServe(HOST_PORT, nil)
 }

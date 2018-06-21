@@ -1,5 +1,23 @@
 # TTI 
 
+Exercise web application where users can collectively increase the value of a variable on the server with the press of a button.
+Result is displayed and updated in realitme.
+
+
+### How to run this program
+
+- Download the latest zip from the [releases page](https://github.com/ghzmdr/TTI/releases)  
+- Unzip in a directory of your choiche
+- Run `go run server.go` from the root of the project (with `yarn` you can also run `yarn serve`)
+- Navigate to [localhost:3000](http://localhost:3000) in your browser 
+
+#### Rebuilding the frontend
+- `yarn install`
+- `yarn build`
+
+#### Running the frontend in development mode
+- `yarn develop`
+
 ### Requirements:
 
 #### Go Server:
@@ -27,6 +45,7 @@ ___
 - [x] Set up frontend boilerplate
 - [x] Set up a simple static server
 - [x] Have a minimal working environment
+- [x] Setup releases including built files
 
 #### 1
 - [ ] WebSocket Endpoint
@@ -37,5 +56,5 @@ ___
 
 #### 2
 - [ ] Polish UI
-- [ ] Make sure code is portable
-- [ ] Release as zip including built frontend
+- [ ] Wrap up code and make sure it's portable
+- [ ] Release final version

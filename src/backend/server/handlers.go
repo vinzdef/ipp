@@ -13,6 +13,9 @@ var counter = 0
 var upgrader = websocket.Upgrader{
 	ReadBufferSize:  1024,
 	WriteBufferSize: 1024,
+	CheckOrigin: func(r *http.Request) bool {
+		return true
+	},
 }
 
 var HandleStatic = http.FileServer(http.Dir("static"))
@@ -20,21 +23,17 @@ var HandleStatic = http.FileServer(http.Dir("static"))
 func HandleWebSocket(w http.ResponseWriter, r *http.Request) {
 	conn, err := upgrader.Upgrade(w, r, nil)
 	if err != nil {
-		log.Println(err)
+		log.Println("[!] Error", err)
 	}
 
 	client := NewClient(conn, MainHub)
-	log.Println("[+]{Client} - Received:", client)
-
 	client.hub.register <- client
-
-	log.Println("[+]{Client} - Registered:", client)
 
 	go client.writePump()
 	go client.readPump()
 
 	client.send <- counterAsByteString()
-	log.Println("[+]{Client} - Active:", client)
+	log.Println("[+] {Client} - Registered:", client)
 }
 
 func HandleIncrease(w http.ResponseWriter, r *http.Request) {
@@ -43,7 +42,7 @@ func HandleIncrease(w http.ResponseWriter, r *http.Request) {
 		//this will dispatch the new value to every client
 		MainHub.Broadcast <- counterAsByteString()
 
-		log.Println("[+]{Increase} - Current Value:", counter)
+		log.Println("[+] {Counter} - Increase:", counter)
 	} else {
 		w.WriteHeader(http.StatusBadRequest)
 		w.Write([]byte("400 - Bad Request (This endpoint only accepts POST)"))

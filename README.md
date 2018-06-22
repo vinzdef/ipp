@@ -1,6 +1,9 @@
 # TTI 
 
-Exercise web application where users can collectively increase the value of a variable on the server with the press of a button.
+Exercise web application where users can collectively increase the value of a counter on the server with.
+Server is in Go, Frontend in React.
+Communication is managed via WebSockets.
+
 Result is displayed and updated in realitme.
 
 
@@ -10,6 +13,9 @@ Result is displayed and updated in realitme.
 - Unzip in a directory of your choiche
 - Run `./output/backend` from the root of the project (with `yarn` you can also run `yarn start`)
 - Navigate to [localhost:3000](http://localhost:3000) in your browser
+
+
+A minimal frontend is also exposed at [http://localhost:3000/minimal.html](http://localhost:3000/minimal.html)
 
 #### Development mode 
 - `yarn develop:frontend`

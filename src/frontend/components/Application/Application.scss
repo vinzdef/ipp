@@ -2,15 +2,10 @@
 	width: 100%;
 	height: 100%;
 	background: lightcyan;
-	display: flex;
-	justify-content: center;
-	align-content: center;
 }
 
 .applicationContent {
-
-	width: 200px;
-
+	height: 80vh;
 	display: flex;
 	align-content: center;
 	flex-direction: column;

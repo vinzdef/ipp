@@ -7,7 +7,6 @@ import (
 	"github.com/gorilla/websocket"
 )
 
-//borrowed values
 const (
 	writeWait      = 10 * time.Second
 	pongWait       = 60 * time.Second
@@ -28,7 +27,6 @@ func (c *Client) readPump() {
 		c.conn.Close()
 	}()
 
-	//borrowed
 	c.conn.SetReadLimit(maxMessageSize)
 	c.conn.SetReadDeadline(time.Now().Add(pongWait))
 	c.conn.SetPongHandler(func(string) error { c.conn.SetReadDeadline(time.Now().Add(pongWait)); return nil })
@@ -40,7 +38,6 @@ func (c *Client) readPump() {
 	for {
 		_, _, err := c.conn.ReadMessage()
 
-		//borrowed
 		if err != nil {
 			if websocket.IsUnexpectedCloseError(err, websocket.CloseGoingAway, websocket.CloseAbnormalClosure) {
 				log.Printf("[!] WebSocket Connection Error: %v", err)

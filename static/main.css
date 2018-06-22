@@ -6441,16 +6441,16 @@ label.HpP2KKL1qVUV3-9Iz7fFg {
 
 
 ._2GwWgZr66jP46luwwACWM3 {
+  display: none;
   position: absolute;
   left: 1rem;
-  bottom: 4rem;
+  bottom: 1rem;
   font-size: 0.7rem;
   background: white; }
 
 @media (min-width: 600px) {
   ._2GwWgZr66jP46luwwACWM3 {
-    font-size: 1rem;
-    bottom: 1rem; } }
+    display: block; } }
 
 .GN1Zp7ZT8bW6Rkq0hXGus {
   font-size: 5rem;

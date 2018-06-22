@@ -13,7 +13,7 @@ export function subscribeValueUpdates() {
 export function increaseValue() {
 	return function (dispatch) {		
 		fetch(`//${window.location.hostname}:3000/v1/increase`, {mode: 'no-cors', method: 'POST'})
-			.then(dispatch({type: INCREASE_SUCCESS}))
-			.catch(dispatch({type: INCREASE_FAILURE}))
+			.then(() => dispatch({type: INCREASE_SUCCESS}))
+			.catch(() => dispatch({type: INCREASE_FAILURE}))
 	}
 }

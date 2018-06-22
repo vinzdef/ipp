@@ -20,7 +20,7 @@ export default class Application extends Component {
 			</div>
 
             <div className={styles.attribution}>
-                Made by: <a href="//ghzmdr.github.io" target="_blank">Vincent De Feo</a>, code <a href="//github.com/ghzmdr/TTI" target="_blank">here</a>
+                Made by <a href="//ghzmdr.github.io" target="_blank">Vincent De Feo</a>, code <a href="//github.com/ghzmdr/TTI" target="_blank">here</a>
             </div>
 
             <TechStack />

@@ -8,22 +8,40 @@ const TechStack = _ => <nav className={`${bulma.panel} ${styles.panel}`}>
         Tech Stack
     </p>    
     <span className={bulma['panel-block']}>            
-        Go
+        <div className={`${bulma.tags} ${bulma['has-addons']}`}>
+            <span className={bulma.tag}>Go</span>
+            <span className={`${bulma.tag} ${bulma['is-info']}`}>Server</span>
+        </div>
+    </span>
+    <span className={bulma['panel-block']}>
+        <div className={`${bulma.tags} ${bulma['has-addons']}`}>
+            <span className={bulma.tag}>Gorilla</span>
+            <span className={`${bulma.tag} ${bulma['is-info']}`}>WebSockets</span>
+        </div>
     </span>
     <span className={bulma['panel-block']}>            
-        WebSockets (Gorilla)
+        <div className={`${bulma.tags} ${bulma['has-addons']}`}>
+            <span className={bulma.tag}>React</span>
+            <span className={`${bulma.tag} ${bulma['is-info']}`}>Frontend</span>
+        </div>
     </span>
     <span className={bulma['panel-block']}>            
-        React
+        <div className={`${bulma.tags} ${bulma['has-addons']}`}>
+            <span className={bulma.tag}>Redux</span>
+            <span className={`${bulma.tag} ${bulma['is-info']}`}>State</span>
+        </div>
     </span>
     <span className={bulma['panel-block']}>            
-        Redux
+        <div className={`${bulma.tags} ${bulma['has-addons']}`}>
+            <span className={bulma.tag}>Webpack</span>
+            <span className={`${bulma.tag} ${bulma['is-info']}`}>Build</span>
+        </div>
     </span>
     <span className={bulma['panel-block']}>            
-        Webpack
-    </span>
-    <span className={bulma['panel-block']}>            
-        Bulma
+        <div className={`${bulma.tags} ${bulma['has-addons']}`}>
+            <span className={bulma.tag}>Bulma</span>
+            <span className={`${bulma.tag} ${bulma['is-info']}`}>CSS</span>
+        </div>
     </span>
 </nav>
 

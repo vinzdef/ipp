@@ -17,6 +17,10 @@ export default class Application extends Component {
             	<CounterValue />
 				<CounterButton />
 			</div>
+
+            <div className={styles.attribution}>
+                Made by: <a href="//ghzmdr.github.io" target="_blank">Vincent De Feo</a>, code <a href="//github.com/ghzmdr/TTI" target="_blank">here</a>
+            </div>
 		</div>
 	}
 }

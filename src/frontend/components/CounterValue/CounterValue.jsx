@@ -19,7 +19,6 @@ class CounterValue extends Component {
     constructor(props) {
         super(props)
         this._value = React.createRef()
-        this._timesShake = 0
     }
 
 	componentDidMount() {
@@ -34,9 +33,7 @@ class CounterValue extends Component {
 
     _shakeValue() {
         if (!this.props.value) return
-
-        ++this._timesShake        
-        const x = (this._timesShake % 2) === 1 ? 10 : -10        
+        const x = (this.props.value % 2) === 1 ? 10 : -10        
         TweenLite.to(this._value.current, 0.2, {x, ease: Power2.easeOut})
     }
 

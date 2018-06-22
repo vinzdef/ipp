@@ -7,6 +7,7 @@ import Navbar from '../Navbar/Navbar'
 import TechStack from '../TechStack/TechStack'
 import CounterValue from '../CounterValue/CounterValue'
 import CounterButton from '../CounterButton/CounterButton'
+import ResetButton from '../ResetButton/ResetButton'
 
 export default class Application extends Component {
 	render() {
@@ -16,7 +17,10 @@ export default class Application extends Component {
 
 		    <div className={styles.applicationContent}>
             	<CounterValue />
-				<CounterButton />
+                <div className={styles.applicationControls}>
+                    <CounterButton />
+    				<ResetButton />
+                </div>
 			</div>
 
             <div className={styles.attribution}>

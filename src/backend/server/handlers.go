@@ -53,6 +53,20 @@ func (h IncreasePOSTHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+type ResetPOSTHandler struct{}
+
+func (h ResetPOSTHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	if r.Method == "POST" {
+		counter = 0
+		MainHub.Broadcast <- counterAsByteString()
+
+		log.Println("[+] {Counter} - Reset:", counter)
+	} else {
+		w.WriteHeader(http.StatusBadRequest)
+		w.Write([]byte("400 - Bad Request (This endpoint only accepts POST)"))
+	}
+}
+
 func counterAsByteString() []byte {
 	return []byte(strconv.Itoa(counter))
 }

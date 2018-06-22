@@ -25,6 +25,7 @@ func (c *Client) readPump() {
 	defer func() {
 		c.hub.unregister <- c
 		c.conn.Close()
+		log.Printf("[+] {ReadPump} Closed: %d", c)
 	}()
 
 	c.conn.SetReadLimit(maxMessageSize)
@@ -54,6 +55,7 @@ func (c *Client) writePump() {
 	defer func() {
 		ticker.Stop()
 		c.conn.Close()
+		log.Printf("[+] {WritePump} Closed: %d", c)
 	}()
 
 	for {

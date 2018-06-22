@@ -12,6 +12,7 @@ func main() {
 	http.Handle("/", server.HandleStatic)
 	http.Handle("/v1/websocket", server.WebSocketHandler{})
 	http.Handle("/v1/increase", server.IncreasePOSTHandler{})
+	http.Handle("/v1/reset", server.ResetPOSTHandler{})
 
 	go server.MainHub.Run()
 

@@ -67,6 +67,6 @@ ___
 - [x] UI
 
 #### 2
-- [ ] Polish UI and server code
-- [ ] Ensure portability
-- [ ] Release final version
+- [x] Polish UI and server code
+- [x] Ensure portability
+- [x] Release final version

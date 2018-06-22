@@ -1,10 +1,10 @@
 # TTI 
 
-Exercise web application where users can collectively increase the value of a counter on the server with.
+Exercise web application where users can collectively increase the value of a counter on the server.
+
+
 Server is in Go, Frontend in React.
 Communication is managed via WebSockets.
-
-Result is displayed and updated in realitme.
 
 
 ### How to run this program
@@ -70,3 +70,14 @@ ___
 - [x] Polish UI and server code
 - [x] Ensure portability
 - [x] Release final version
+
+___
+
+### Learning material 
+
+I never wrote any Go and needed some refresher on WebSockets, this is what helped me.
+
+- [Gorilla Chat Example](https://github.com/gorilla/websocket/tree/master/examples/chat)
+- [The Little Go Book](http://openmymind.net/The-Little-Go-Book/)
+- [Concurrency patterns in Go](https://www.youtube.com/watch?v=YEKjSzIwAdA)
+- [Inside WebSockets](https://www.youtube.com/watch?v=YEKjSzIwAdA)

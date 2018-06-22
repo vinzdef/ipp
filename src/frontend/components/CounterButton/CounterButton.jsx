@@ -1,18 +1,18 @@
 import React, {Component} from 'react'
 
-import {INCREASE_VALUE} from '../../actions/types'
+import {increaseValue} from '../../actions/value'
 
 import * as bulma from 'bulma'
 import {connect} from 'react-redux'
 
 const mapDispatchToProps = dispatch => ({
-	increaseValue: dispatch({type: INCREASE_VALUE})
+	increaseValue: () => dispatch(increaseValue)
 })
 
-@connect(null, mapDispatchToProps)
+@connect(void 0, mapDispatchToProps)
 class CounterButton extends Component {	
 	render() {
-		return <button className={bulma.button}>
+		return <button className={bulma.button} onClick={this.props.increaseValue}>
 			PUSH ME
 		</button>
 	}

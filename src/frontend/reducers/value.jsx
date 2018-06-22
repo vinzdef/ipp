@@ -1,9 +1,9 @@
-import {RECEIVE_VALUE} from '../actions/types'
+import {UPDATE_VALUE} from '../actions/types'
 
 const value = (state = '...', action) => {
 
 	switch (action.type) {
-		case RECEIVE_VALUE:
+		case UPDATE_VALUE:
 			return action.value
 		default:
 			return state

@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 
-import {INCREASE_VALUE, CONNECT_WEBSOCKET} from '../../actions/types'
+import {SUBSCRIBE_VALUE_UPDATES, UPDATE_VALUE} from '../../actions/types'
+import {subscribeValueUpdates} from '../../actions/value'
 
 import * as styles from './CounterValue.scss'
 
@@ -8,14 +9,14 @@ import * as bulma from 'bulma'
 import {connect} from 'react-redux'
 
 const mapStateToProps = ({value}) => ({value})
-const mapDispatchToProps = (dispatch) => ({
-	connectWebSocket: dispatch({type: CONNECT_WEBSOCKET})
+const mapDispatchToProps = dispatch => ({ 
+	subscribeValueUpdates: _ => dispatch(subscribeValueUpdates)
 })
 
 @connect(mapStateToProps, mapDispatchToProps)
 class CounterValue extends Component {	
 	componentDidMount() {
-		this.props.connectWebSocket()
+		this.props.subscribeValueUpdates()
 	}
 
 	render() {

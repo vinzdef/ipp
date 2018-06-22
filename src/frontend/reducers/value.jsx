@@ -1,6 +1,6 @@
 import {UPDATE_VALUE} from '../actions/types'
 
-const value = (state = '...', action) => {
+const value = (state = '', action) => {
 
 	switch (action.type) {
 		case UPDATE_VALUE:

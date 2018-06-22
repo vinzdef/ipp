@@ -3,6 +3,7 @@ import React, {Component} from 'react'
 import {increaseValue} from '../../actions/value'
 
 import * as bulma from 'bulma'
+import * as styles from './CounterButton.scss'
 import {connect} from 'react-redux'
 
 const mapDispatchToProps = dispatch => ({
@@ -12,8 +13,8 @@ const mapDispatchToProps = dispatch => ({
 @connect(void 0, mapDispatchToProps)
 class CounterButton extends Component {	
 	render() {
-		return <button className={bulma.button} onClick={this.props.increaseValue}>
-			PUSH ME
+		return <button className={`${bulma.button} ${bulma['is-dark']} ${styles.button}`} onClick={this.props.increaseValue}>
+			+1
 		</button>
 	}
 }

@@ -8,7 +8,6 @@ import (
 	"github.com/gorilla/websocket"
 )
 
-var MainHub = NewHub()
 var counter = 0
 var upgrader = websocket.Upgrader{
 	ReadBufferSize:  1024,
@@ -18,9 +17,12 @@ var upgrader = websocket.Upgrader{
 	},
 }
 
+var MainHub = NewHub()
 var HandleStatic = http.FileServer(http.Dir("static"))
 
-func HandleWebSocket(w http.ResponseWriter, r *http.Request) {
+type WebSocketHandler struct{}
+
+func (h WebSocketHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	conn, err := upgrader.Upgrade(w, r, nil)
 	if err != nil {
 		log.Println("[!] Error", err)
@@ -36,7 +38,9 @@ func HandleWebSocket(w http.ResponseWriter, r *http.Request) {
 	log.Println("[+] {Client} - Registered:", client)
 }
 
-func HandleIncrease(w http.ResponseWriter, r *http.Request) {
+type IncreasePOSTHandler struct{}
+
+func (h IncreasePOSTHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	if r.Method == "POST" {
 		counter = counter + 1
 		//this will dispatch the new value to every client

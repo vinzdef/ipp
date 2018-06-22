@@ -9,10 +9,9 @@ import (
 const HOST_PORT = "0.0.0.0:3000"
 
 func main() {
-
 	http.Handle("/", server.HandleStatic)
-	http.HandleFunc("/v1/websocket", server.HandleWebSocket)
-	http.HandleFunc("/v1/increase", server.HandleIncrease)
+	http.Handle("/v1/websocket", server.WebSocketHandler{})
+	http.Handle("/v1/increase", server.IncreasePOSTHandler{})
 
 	go server.MainHub.Run()
 

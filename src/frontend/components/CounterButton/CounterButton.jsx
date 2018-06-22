@@ -13,7 +13,7 @@ const mapDispatchToProps = dispatch => ({
 @connect(void 0, mapDispatchToProps)
 class CounterButton extends Component {	
 	render() {
-		return <button className={`${bulma.button} ${styles.button}`} onClick={this.props.increaseValue}>
+		return <button className={`${bulma.button} ${bulma['is-dark']} ${styles.button}`} onClick={this.props.increaseValue}>
 			+1
 		</button>
 	}

@@ -1,0 +1,14 @@
+.panel {
+	position: absolute;
+	left: 1rem;
+	bottom: 4rem;
+	font-size: 0.7rem;
+	background: white;
+}
+
+@media (min-width: 600px) {
+	.panel {
+		font-size: 1rem;
+		bottom: 1rem;
+	}
+}

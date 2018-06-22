@@ -1,5 +1,7 @@
 package server
 
+import "log"
+
 type Hub struct {
 	Clients    map[*Client]bool // A map whose keys are Client ptrs and values are status flags
 	Broadcast  chan []byte
@@ -22,6 +24,7 @@ func (h *Hub) Run() {
 				select {
 				case client.send <- value: //Just send
 				default: //Prune dead clients
+					log.Printf("[+] {DeadClient} Pruned: %d", client)
 					close(client.send)
 					delete(h.Clients, client)
 				}

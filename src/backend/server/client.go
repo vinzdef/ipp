@@ -43,7 +43,7 @@ func (c *Client) readPump() {
 		//borrowed
 		if err != nil {
 			if websocket.IsUnexpectedCloseError(err, websocket.CloseGoingAway, websocket.CloseAbnormalClosure) {
-				log.Printf("Error: %v", err)
+				log.Printf("[!] WebSocket Connection Error: %v", err)
 			}
 
 			break //runs deferred cleanup

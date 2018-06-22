@@ -6,12 +6,12 @@
   const value =  document.querySelector('#value')
 
 
-  const ws = new WebSocket('ws://localhost:3000/v1/websocket')
+  const ws = new WebSocket(`ws://${window.location.hostname}:3000/v1/websocket`)
 
   const updateValue = v => value.textContent = v
   
   const increaseValue = _ => {
-    fetch('/v1/increase', {
+    fetch(`//${window.location.hostname}:3000/v1/increase`, {
       method: 'POST'
     })
   }

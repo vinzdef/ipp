@@ -6,7 +6,7 @@ import * as bulma from 'bulma'
 import {connect} from 'react-redux'
 
 const mapDispatchToProps = dispatch => ({
-	increaseValue: () => dispatch(increaseValue)
+	increaseValue: () => dispatch(increaseValue())
 })
 
 @connect(void 0, mapDispatchToProps)

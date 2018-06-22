@@ -10,7 +10,7 @@ import {connect} from 'react-redux'
 
 const mapStateToProps = ({value}) => ({value})
 const mapDispatchToProps = dispatch => ({ 
-	subscribeValueUpdates: _ => dispatch(subscribeValueUpdates)
+	subscribeValueUpdates: _ => dispatch(subscribeValueUpdates())
 })
 
 @connect(mapStateToProps, mapDispatchToProps)

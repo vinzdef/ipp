@@ -1,4 +1,7 @@
 import React, {Component} from 'react'
+import {connect} from 'react-redux'
+
+import {closeSocket} from '../../actions/socket'
 
 import * as styles from './Application.scss'
 import * as bulma from 'bulma'
@@ -8,8 +11,33 @@ import TechStack from '../TechStack/TechStack'
 import CounterValue from '../CounterValue/CounterValue'
 import CounterButton from '../CounterButton/CounterButton'
 import ResetButton from '../ResetButton/ResetButton'
+import ConnectionStatus from '../ConnectionStatus/ConnectionStatus'
 
-export default class Application extends Component {
+const mapStateToProps = ({socket}) => ({socket})
+const mapDispatchToProps = dispatch => ({
+    closeSocket: socket => dispatch(closeSocket(socket))
+})
+
+@connect(mapStateToProps, mapDispatchToProps)
+class Application extends Component {
+    constructor(props) {
+        super(props)
+        this.closeSocket = this.closeSocket.bind(this)
+    }
+
+    closeSocket() {
+        const {socket, closeSocket} = this.props
+        closeSocket(socket)
+    }
+
+    componentDidMount() {
+        window.addEventListener('beforeunload', this.closeSocket)
+    }
+
+    componentWillUnmount() {
+        window.addEventListener('beforeunload', this.closeSocket)
+    }
+
 	render() {
 		return <div className={styles.application}>
             
@@ -31,3 +59,6 @@ export default class Application extends Component {
 		</div>
 	}
 }
+
+
+export default Application

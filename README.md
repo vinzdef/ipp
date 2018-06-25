@@ -7,21 +7,22 @@ Server is in Go, Frontend in React.
 Communication is managed via WebSockets.
 
 
-### How to run this program
+### How to run this program locally
 
 - Download the latest zip from the [releases page](https://github.com/ghzmdr/TTI/releases)  
 - Unzip in a directory of your choiche
-- Run `./output/backend` from the root of the project (with `yarn` you can also run `yarn start`)
+- Source `.env.local` Run `./output/backend` from the root of the project (or `yarn start`)
 - Navigate to [localhost:3000](http://localhost:3000) in your browser
 
 
-A minimal frontend is also exposed at [http://localhost:3000/minimal.html](http://localhost:3000/minimal.html)
+A minimal frontend is also exposed at `[http://localhost:3000/static/minimal.html]`(http://localhost:3000/minimal.html)
 
 #### Development mode 
 - `yarn develop:frontend`
 - `yarn develop:backend`
 
-This will serve the web app under `:8080` (trough Webpack Dev Server)
+This will serve the web app under `[//localhost:8080](//localhost:8080)` (trough Webpack Dev Server)
+And the normal API + Static under `[//localhost:3000](//localhost:3000)` 
 
 #### Building 
 - `yarn install`
@@ -39,6 +40,7 @@ ___
 - Serves static files
 - Has `POST` endpoint to increase counter
 - Has WebSocket to broadcast counter value
+- Host address is ser via env variables
 
 #### Frontend:
 
@@ -48,6 +50,8 @@ ___
 - Has increase button that sends `POST`
 - Looks nice, maybe with some CSS Framework
 - Built with Webpack
+- Has indicator for connection status
+- Handles connection close gracefully 
 
 ___
 
@@ -69,7 +73,18 @@ ___
 #### 2
 - [x] Polish UI and server code
 - [x] Ensure portability
-- [x] Release final version
+- [x] Release V1
+
+- ##### 2.1
+- [x] Add reset endpoint and gui
+
+
+- #### 3
+- [x] Refactor backend code for modularity
+- [x] Allow address configuration from env variables
+- [x] Seamlessly integrate change in frontend
+- [ ] Display a websocket status indicator
+- [ ] Handle disconnection gracefully
 
 ___
 

@@ -5,9 +5,8 @@ import {
 } from './types'
 
 export function subscribeValueUpdates() {
-	
 	return function(dispatch) {
-		const ws = new WebSocket(`ws://${window.location.hostname}:3000/v1/websocket`)
+		const ws = new WebSocket(`ws://${window.Settings.API_URL}/websocket`)
 		ws.addEventListener('message', ({data}) => {
 			dispatch({type: UPDATE_VALUE, value: data})
 		})
@@ -16,7 +15,7 @@ export function subscribeValueUpdates() {
 
 export function increaseValue() {
 	return function (dispatch) {		
-		fetch(`//${window.location.hostname}:3000/v1/increase`, {mode: 'no-cors', method: 'POST'})
+		fetch(`//${window.Settings.API_URL}/increase`, {mode: 'no-cors', method: 'POST'})
 			.then(() => dispatch({type: INCREASE_SUCCESS}))
 			.catch(() => dispatch({type: INCREASE_FAILURE}))
 	}
@@ -24,7 +23,7 @@ export function increaseValue() {
 
 export function resetValue() {
     return function (dispatch) {        
-        fetch(`//${window.location.hostname}:3000/v1/reset`, {mode: 'no-cors', method: 'POST'})
+        fetch(`//${window.Settings.API_URL}/reset`, {mode: 'no-cors', method: 'POST'})
             .then(() => dispatch({type: RESET_SUCCESS}))
             .catch(() => dispatch({type: RESET_FAILURE}))
     }

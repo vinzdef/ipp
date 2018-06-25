@@ -75,16 +75,17 @@ ___
 - [x] Ensure portability
 - [x] Release V1
 
-- ##### 2.1
+
+##### 2.1
 - [x] Add reset endpoint and gui
 
 
-- #### 3
+#### 3
 - [x] Refactor backend code for modularity
 - [x] Allow address configuration from env variables
 - [x] Seamlessly integrate change in frontend
-- [ ] Display a websocket status indicator
-- [ ] Handle disconnection gracefully
+- [X] Display a websocket status indicator
+- [X] Handle disconnection gracefully
 
 ___
 

@@ -11,7 +11,8 @@
     "develop:backend": "source ./.env.local && go run ./src/backend/main.go",
     "develop:frontend": "webpack-dev-server --config ./webpack.config.js --mode development --host 0.0.0.0",
     
-    "start:prod": "source ./.env.prod && ./output/backend"
+    "start:prod": "source ./.env.prod && ./output/backend",
+    "start:local": "source ./.env.local && ./output/backend"
   },
   "repository": {
     "type": "git",

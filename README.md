@@ -11,7 +11,7 @@ Communication is managed via WebSockets.
 
 - Download the latest zip from the [releases page](https://github.com/ghzmdr/TTI/releases)  
 - Unzip in a directory of your choiche
-- Source `.env.local` Run `./output/backend` from the root of the project (or `yarn start`)
+- Source `.env.local` Run `./output/backend` from the root of the project (or `yarn start:local`)
 - Navigate to [localhost:3000](http://localhost:3000) in your browser
 
 

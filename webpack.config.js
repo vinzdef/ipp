@@ -55,14 +55,18 @@ module.exports = {
   ],
 
   output: {
-    path: __dirname + '/static/',
-    publicPath: '/',
+    path: __dirname + '/web/static/',
+    publicPath: '/static/',
     filename: 'main.js'
   },
 
   devServer: {
-    contentBase: './static/',
+    contentBase: './web',
     disableHostCheck: true,
-    hot: true
+    hot: true,
+    index: 'local.html',
+    historyApiFallback: {
+        index: 'local.html'
+    }
   }
 };

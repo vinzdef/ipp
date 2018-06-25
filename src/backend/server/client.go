@@ -16,14 +16,14 @@ const (
 
 type Client struct {
 	conn *websocket.Conn
-	send chan []byte
-	hub  *Hub //needs link to hub to signal itself on the unregister channel
+	Send chan []byte
+	Hub  *Hub //needs link to hub to signal itself on the unregister channel
 }
 
-func (c *Client) readPump() {
+func (c *Client) ReadPump() {
 
 	defer func() {
-		c.hub.unregister <- c
+		c.Hub.Unregister <- c
 		c.conn.Close()
 		log.Printf("[+] {ReadPump} Closed: %d", c)
 	}()
@@ -49,7 +49,7 @@ func (c *Client) readPump() {
 	}
 }
 
-func (c *Client) writePump() {
+func (c *Client) WritePump() {
 	ticker := time.NewTicker(pingPeriod)
 
 	defer func() {
@@ -60,7 +60,7 @@ func (c *Client) writePump() {
 
 	for {
 		select {
-		case message, ok := <-c.send: //Client received a message
+		case message, ok := <-c.Send: //Client received a message
 			c.conn.SetWriteDeadline(time.Now().Add(writeWait))
 
 			if !ok {
@@ -90,7 +90,7 @@ func (c *Client) writePump() {
 func NewClient(conn *websocket.Conn, hub *Hub) *Client {
 	return &Client{
 		conn: conn,
-		hub:  hub,
-		send: make(chan []byte, 256),
+		Hub:  hub,
+		Send: make(chan []byte, 256),
 	}
 }

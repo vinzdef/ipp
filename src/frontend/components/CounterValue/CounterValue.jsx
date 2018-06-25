@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {TweenLite} from 'gsap'
 
 import {SUBSCRIBE_VALUE_UPDATES, UPDATE_VALUE} from '../../actions/types'
-import {subscribeValueUpdates} from '../../actions/value'
+import {createSocket} from '../../actions/socket'
 
 import * as styles from './CounterValue.scss'
 
@@ -11,7 +11,7 @@ import {connect} from 'react-redux'
 
 const mapStateToProps = ({value}) => ({value})
 const mapDispatchToProps = dispatch => ({ 
-	subscribeValueUpdates: _ => dispatch(subscribeValueUpdates())
+	createSocket: _ => dispatch(createSocket())
 })
 
 @connect(mapStateToProps, mapDispatchToProps)
@@ -22,7 +22,7 @@ class CounterValue extends Component {
     }
 
 	componentDidMount() {
-		this.props.subscribeValueUpdates()
+		this.props.createSocket()
 	}
 
     componentWillReceiveProps(nextProps) {

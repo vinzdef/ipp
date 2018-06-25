@@ -56,6 +56,7 @@ class Application extends Component {
             </div>
 
             <TechStack />
+            <ConnectionStatus />
 		</div>
 	}
 }

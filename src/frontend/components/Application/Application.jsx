@@ -1,7 +1,4 @@
 import React, {Component} from 'react'
-import {connect} from 'react-redux'
-
-import {closeSocket} from '../../actions/socket'
 
 import * as styles from './Application.scss'
 import * as bulma from 'bulma'
@@ -13,31 +10,9 @@ import CounterButton from '../CounterButton/CounterButton'
 import ResetButton from '../ResetButton/ResetButton'
 import ConnectionStatus from '../ConnectionStatus/ConnectionStatus'
 
-const mapStateToProps = ({socket}) => ({socket})
-const mapDispatchToProps = dispatch => ({
-    closeSocket: socket => dispatch(closeSocket(socket))
-})
-
-@connect(mapStateToProps, mapDispatchToProps)
 class Application extends Component {
     constructor(props) {
         super(props)
-        this.closeSocket = this.closeSocket.bind(this)
-    }
-
-    closeSocket() {
-        const {socket, closeSocket} = this.props
-        closeSocket(socket)
-    }
-
-    componentDidMount() {
-        window.addEventListener('beforeunload', this.closeSocket)
-    }
-
-    componentWillUnmount() {
-        // Best practice, but will never be called because
-        // Page thread is discarded after unload
-        window.removeEventListener('beforeunload', this.closeSocket)
     }
 
 	render() {

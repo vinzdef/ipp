@@ -6,17 +6,20 @@ import * as bulma from 'bulma'
 import * as styles from './ResetButton.scss'
 import {connect} from 'react-redux'
 
+const mapStateToProps = ({status}) => ({isConnected: status === 'UP'})
 const mapDispatchToProps = dispatch => ({
 	resetValue: () => dispatch(resetValue())
 })
 
-@connect(void 0, mapDispatchToProps)
-class CounterButton extends Component {	
+@connect(mapStateToProps, mapDispatchToProps)
+class ResetButton extends Component {	
 	render() {
-		return <button className={`${bulma.button} ${bulma['is-dark']} ${styles.button}`} onClick={this.props.resetValue}>
+        const {isConnected} = this.props
+
+		return <button disabled={!isConnected} className={`${bulma.button} ${bulma['is-dark']} ${styles.button}`} onClick={this.props.resetValue}>
 			Reset
 		</button>
 	}
 }
 
-export default CounterButton
+export default ResetButton

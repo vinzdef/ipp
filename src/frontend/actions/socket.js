@@ -20,6 +20,8 @@ export function createSocket() {
         ws.addEventListener('message', 
             ({data}) => dispatch({type: UPDATE_VALUE, value: data})
         )
+
+        window.addEventListener('beforeunload', _ => dispatch(closeSocket(ws)))
     }
 }
 

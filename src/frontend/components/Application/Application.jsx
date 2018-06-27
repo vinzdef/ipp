@@ -35,7 +35,9 @@ class Application extends Component {
     }
 
     componentWillUnmount() {
-        window.addEventListener('beforeunload', this.closeSocket)
+        // Best practice, but will never be called because
+        // Page thread is discarded after unload
+        window.removeEventListener('beforeunload', this.closeSocket)
     }
 
 	render() {

@@ -15,14 +15,14 @@ Communication is managed via WebSockets.
 - Navigate to [localhost:3000](http://localhost:3000) in your browser
 
 
-A minimal frontend is also exposed at `[http://localhost:3000/static/minimal.html]`(http://localhost:3000/minimal.html)
+A minimal frontend is also exposed at [http://localhost:3000/static/minimal.html](http://localhost:3000/minimal.html)
 
 #### Development mode 
 - `yarn develop:frontend`
 - `yarn develop:backend`
 
-This will serve the web app under `[//localhost:8080](//localhost:8080)` (trough Webpack Dev Server)
-And the normal API + Static under `[//localhost:3000](//localhost:3000)` 
+This will serve the web app under [//localhost:8080](//localhost:8080) (trough Webpack Dev Server)
+And the normal API + Static under [//localhost:3000](//localhost:3000) 
 
 #### Building 
 - `yarn install`

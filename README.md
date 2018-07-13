@@ -1,4 +1,4 @@
-# I++ 
+# i++ 
 
 Exercise web application where users can collectively increase the value of a counter on the server.
 

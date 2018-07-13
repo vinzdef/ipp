@@ -1,4 +1,4 @@
-# TTI 
+# ++I 
 
 Exercise web application where users can collectively increase the value of a counter on the server.
 
@@ -89,11 +89,8 @@ ___
 
 ___
 
-### Learning material 
-
-I never wrote any Go and needed some refresher on WebSockets, this is what helped me.
+### Learning material
 
 - [Gorilla Chat Example](https://github.com/gorilla/websocket/tree/master/examples/chat)
 - [The Little Go Book](http://openmymind.net/The-Little-Go-Book/)
 - [Concurrency patterns in Go](https://www.youtube.com/watch?v=YEKjSzIwAdA)
-- [Inside WebSockets](https://www.youtube.com/watch?v=YEKjSzIwAdA)

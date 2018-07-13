@@ -6,8 +6,8 @@ import * as styles from './Navbar.scss'
 const Navbar = _ => <nav className={`${bulma.navbar} ${styles.navbar}`}>
     <div className={bulma['navbar-item']}>
         <div>
-            <h1 className={bulma.title}>The Things Industries</h1>        
-            <h3 className={bulma.subtitle}>Counter Exercise</h3>    
+            <h1 className={bulma.title}>I++</h1>        
+            <h3 className={bulma.subtitle}>Collective counter</h3>    
         </div>
     </div>
 </nav>

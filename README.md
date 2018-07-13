@@ -21,8 +21,8 @@ A minimal frontend is also exposed at [http://localhost:3000/static/minimal.html
 - `yarn develop:frontend`
 - `yarn develop:backend`
 
-This will serve the web app under [//localhost:8080](//localhost:8080) (trough Webpack Dev Server)
-And the normal API + Static under [//localhost:3000](//localhost:3000) 
+This will serve the web app under [http://localhost:8080](http:////localhost:8080) (trough Webpack Dev Server)
+And the normal API + Static under [http:////localhost:3000](http:////localhost:3000) 
 
 #### Building 
 - `yarn install`
